@@ -1,0 +1,247 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <link rel="shortcut icon" href="data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAAAQABAAD/2wCEAAkGBwgHBgkIBwgKCgkLDRYPDQwMDRsUFRAWIB0iIiAdHx8kKDQsJCYxJx8fLT0tMTU3Ojo6Iys/RD84QzQ5OjcBCgoKDQwNGg8PGjclHyU3Nzc3Nzc3Nzc3Nzc3Nzc3Nzc3Nzc3Nzc3Nzc3Nzc3Nzc3Nzc3Nzc3Nzc3Nzc3Nzc3N//AABEIADgAOAMBIgACEQEDEQH/xAAbAAABBQEBAAAAAAAAAAAAAAAGAAMEBQcBAv/EAC4QAAIBAwMCBAUEAwAAAAAAAAECAwAEEQUGMRIhEyJBURQjYXGBFTKR8AfR4f/EABkBAAIDAQAAAAAAAAAAAAAAAAIEAQMFAP/EAB8RAAMAAgICAwAAAAAAAAAAAAABAgMRMUESIgQhUf/aAAwDAQACEQMRAD8AylTTsZ70wpp5eaQo1kT7f9q/YUZ7K2rPuKR1QhIo8F5G4H0+9Bdvwv2o623viDas3wVvGbmWROkoDhQ/bBJquIVX7cBZLqI9eS93DsFtHs/iIJhOijLjpwQPeg6VOnGV57Vpe4dX1qXbb6gwtzAqkzxrGQQmO5Bz6c1mk8wYqBxjmgzqFScFvx6yOWsnJ6gXHPrSpsSHK98V2qWmMJoBkp+MZNdktJrdumeNkP1rvWkSFpGAA96doRnXJy7laK0wgJkcdKgc150S3b9YRL1JOoP8wHseak6TEl7dwSzr5OoBBnj61oWo7NsLS3/W1vZI4/D6pXI6ukj2Htj0qHaiXPZCl3aroINT8GDa97ardP4IsiwcsuWcggAj8j09qzlGKoq5zgYqtud2XWqldPVY1tTMCJGX5jqv7Qx4+uKmKcYBpfLNTpUMY6mtuSWDwa7TYyRSqvZaHm8NlfKaW085Xkrx3xisefSJPipPiGyQ5HT6LitLXccvhMhuCyOuCCfzkf360M69d2qo08ciGeQ/M479z/qtLI+5MnGurKR3FsECdiuO1axoEi7j2hdaaX800JUH2OKxlrlJZQF8xPGO9HWy7+TQNTtVncCK4ALD0RvY0rUNLbG4pN6QB6XaAa+tvcr4PhT4kB5Ug4I/mtYi0Kxfv5s/Q5zVX/kzaMj62NZ0yPqtLxV8foOOl8gA/nI49qItqaReXFnZywXRe3dfOswBKY7djzyPWiytW0RihxL19EdNEs+rAEg+9Kiu6sfDcKrdeOSPQ0qr8UF51+gWLdevzICBzhacl0exugRcQI49Mp/fWu0qkggvsjSpnBt0kglHqh4qDf7MvVYLbagsuf2rMCCPyM0qVdtg6QRqmsy7Nm0u5SM3T+RH8Ty4yO+f+Vf7bjk07TLe1m6D0jDsDklick/yaVKuCdtltFKsmQrEnPtxSpUqgA//2Q==">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Laufey's Quiz!</title>
+    <style>
+        body {
+            font-family: Arial, Helvetica, sans-serif;
+            text-align: center;
+            background-color: antiquewhite;
+            font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+        }
+
+        .quiz-container {
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        #pergunta {
+            font-size: 24px;
+            margin-bottom: 20px;
+        }
+        
+        #opcoes {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+
+        h1 {
+            color: #221d15;
+            font-family: 'Courier New', Courier, monospace;
+            background-color: #806c4e;
+            border-radius: 15px;
+            font-size: 35px;
+        }
+
+        button {
+            padding: 10px 20px;
+            margin: 10px;
+            font-size: 16px;
+            cursor: pointer;
+            background-color: #806c4e;
+            border-radius: 15px;
+            font-family: fantasy;
+        }
+
+        img {
+            border-radius: 30px;
+        }
+
+        .correto {
+            background-color: #8BC34A;
+        }
+
+        .incorreto {
+            background-color: #FF5722;
+        }
+
+        .laufey{
+            position: absolute;
+            top: 20%;
+            left: 6%;
+            animation: balançar 2.3s alternate infinite linear;
+        }
+
+        .lalau {
+            position: absolute;
+            top: 20%;
+            left: 75%;
+            animation: balançar2 4.5s alternate infinite linear;
+        }
+
+        .lau {
+            position: absolute;
+            top: 60%;
+            animation: vaiEVem 4s alternate infinite linear;
+        }
+
+        @keyframes balançar {
+            0% {
+                transform: translateX(20%);
+            }
+
+            100% {
+                transform: translateY(40%);
+            }
+        }
+
+        @keyframes vaiEVem {
+            0% {
+                transform: translateX(0vw);
+            }
+
+            100% {
+                transform: translateX(10vw);
+            }
+        }
+        
+
+        @keyframes balançar2 {
+            0% {
+                transform: translateX(-20%);
+            }
+
+            100% {
+                transform: translateY(40%);
+            }
+        }
+
+    </style>
+</head>
+<body>
+
+    <div class="quiz-container">
+        <h1> Quiz de Perguntas e Respostas</h1>
+        <div id="pergunta"></div>
+        <div id="opcoes"></div>
+        <div id="resultado"></div>
+    </div>
+
+    <br><br>
+
+    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/0/07/Laufey_Lin.jpg/492px-Laufey_Lin.jpg" alt="Laufey posando">
+
+    <div class="laufey">
+
+        <img src="https://images.squarespace-cdn.com/content/v1/60300340d27ffb2c6946ccbe/6b750f6e-050c-486f-a61d-dadb4b204ba9/Screenshot+2023-09-22+at+3.23.41+PM.png" alt="Laufey posando com as mãos no rosto" width="200px">
+
+    </div>
+
+    <div class="lalau">
+        <img src="https://images.squarespace-cdn.com/content/v1/60300340d27ffb2c6946ccbe/1709319041542-91KI4TJ44AT2TOVT5FU3/image-asset.jpeg?format=300w" alt="" width="200px">
+    </div>
+
+    <div class="lau">
+        <img src="https://images.squarespace-cdn.com/content/v1/60300340d27ffb2c6946ccbe/1708965128024-51GQTM1SUCRLW0ICO2YQ/image-asset.jpeg?format=300w" alt="">
+    </div>
+
+    <script>
+        const perguntas = [
+            {
+                pergunta: "Qual o nome completo da cantora Laufey?",
+                opcoes: ["Laufey Lín Jónsdóttir", "ela não tem nenhum nome além de laufey", "Laufey San Diego", "Laufey Santos Cervantes"],
+                resposta: "Laufey Lín Jónsdóttir"
+            },
+
+            {
+                pergunta: "Quantos álbuns Laufey tem?",
+                opcoes: ["2", "7", "3", "Nenhum"],
+                resposta: "3"
+            },
+
+            {
+                pergunta: "Segundo Laufey, qual o estilo musical da mesma?",
+                opcoes: ["Pop", "Jazz", "Indie", "Jazz-Pop"],
+                resposta: "Jazz-Pop"
+            },
+
+            {
+                pergunta: "Qual o ano em q Laufey participou da temporada do Ísland Got Talent?",
+                opcoes: ["2014", "2001", "Não participou", "2015"],
+                resposta: "2014"
+            },
+
+            {
+                pergunta: "E ela terminou em que posição?",
+                opcoes: ["Primeiro lugar", "Finalista", "Semi-finalista", "Nem chegou nas finais"],
+                resposta: "Finalista"
+            }
+
+        ];
+
+        const perguntaElemento = document.getElementById("pergunta");
+
+        const opcoesElemento = document.getElementById("opcoes");
+
+        const resultadoElemento = document.getElementById("resultado");
+
+        let indicePerguntaAtual = 0;
+
+        function carregarPergunta() {
+            const perguntaAtual = perguntas[indicePerguntaAtual];
+
+            perguntaElemento.textContent = perguntaAtual.pergunta;
+
+            opcoesElemento.innerHTML = "";
+            
+            perguntaAtual.opcoes.forEach(opcao => {
+
+                const botao = document.createElement("button");
+
+                botao.textContent = opcao;
+
+                botao.addEventListener("click", () => verificarResposta(opcao));
+
+                opcoesElemento.appendChild(botao);
+
+            });
+        }
+
+        function verificarResposta(respostaSelecionada) {
+
+            const perguntaAtual = perguntas[indicePerguntaAtual];
+
+            if (respostaSelecionada === perguntaAtual.resposta) {
+
+                resultadoElemento.textContent = "Resposta correta!";
+
+                resultadoElemento.className = "correto";
+
+            } else {
+                resultadoElemento.textContent = "Resposta incorreta. A resposta correta é: " + perguntaAtual.resposta;
+
+                resultadoElemento.className = "incorreto";
+            }
+
+            // Avança para a próxima pergunta ou finaliza quiz
+
+            indicePerguntaAtual++;
+
+            if (indicePerguntaAtual < perguntas.length) {
+
+                setTimeout (carregarPergunta, 2000); //carrega próxima pergunta após 2 segundos
+
+            } else {
+
+                resultadoElemento.textContent = "Quiz concluído!Meus parabéns :D! Um beijo da Kim<333";
+
+                resultadoElemento.className = "";
+            }
+        }
+
+        // Carrega a primeira pergunta quando a página carrega
+
+        carregarPergunta();
+
+    </script>
+
+    <br><br>
+
+    <footer> By Kim</footer>
+    
+</body>
+</html>
